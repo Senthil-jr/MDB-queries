@@ -1,0 +1,33 @@
+1- Find all informtion about each product
+db.Product.find()
+
+2- FInd Product between 400 t0 800
+db.Product.find(product_price:{$gte:400,$lte:800});
+
+3- Not between 400 and 800
+db.Product.find({product_price:{$not:{$gte;400,$lte:800}}})
+
+4- FOur Product greater than 500
+db.Product.find({product_price:{$gte:500}})
+
+5- product name and material
+db.Product.find({},{product_name:1,product_material:1,_id:0})
+
+6- product with a row id of 10
+db.Product.find({row_id:{$eq:10}})
+
+7- product name and material only
+db.Product.find({row_id:{$eq:10}},{product_name:1,product_material:1})
+
+8-  material with soft 
+db.Product.find({product_material:{$eq: 'Soft'}})
+
+9- product with color indigo and product price 492.00
+db.Product.find({$and:[
+  {product_color: {$eq: 'indigo'}},
+  {product_price: {$eq: 492}}
+]
+})
+
+10- delete with price with 28
+db.Product.deleteMany({product_price:{$eq:28}})
