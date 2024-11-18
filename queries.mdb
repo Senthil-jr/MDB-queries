@@ -1,5 +1,5 @@
 1- Find all informtion about each product
-db.Product.find()
+db.Product.find({})
 
 2- FInd Product between 400 t0 800
 db.Product.find(product_price:{$gte:400,$lte:800});
